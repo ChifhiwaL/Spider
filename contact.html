@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beru Art Tattoo Studio | Contact</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Beru Art Tattoo Studio | Contact - Visit Our Studios</title>
+    <meta name="description" content="Contact Beru Art Tattoo Studio in Johannesburg. Visit our Braamfontein or Melville studio, or send us a message for enquiries and bookings.">
+    <meta name="keywords" content="contact tattoo studio, tattoo shop Johannesburg, Braamfontein tattoo, Melville tattoo, Beru Art contact">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ========================================== -->
-    <!-- BERU ART TATTOO STUDIO - CONTACT PAGE      -->
-    <!-- Two locations required by assignment       -->
-    <!-- ========================================== -->
-
+    <!-- Contact page - two locations and contact form -->
     <header>
         <div class="logo">
-            <img src="images/logo-placeholder.png" alt="Beru Art Tattoo Studio Logo" width="120">
+            <img src="images/Beru Art logo.png" alt="Beru Art Tattoo Studio Logo" width="120">
         </div>
         <nav>
             <ul>
@@ -30,41 +35,48 @@
     <main>
         <h2>Contact Us</h2>
 
-        <!-- Location 1 -->
+        <!-- Location 1 - Main studio in Braamfontein -->
         <section class="location">
             <h3>Location 1: Main Studio - Braamfontein</h3>
             <p>123 Juta Street<br>Braamfontein, Johannesburg<br>2001</p>
             <p><strong>Hours:</strong> Monday - Saturday, 10am - 6pm</p>
-            <p><em>[Interactive Google Map to be added in Part 3]</em></p>
+            <!-- Leaflet Map for Location 1 -->
+            <div id="map1" class="leaflet-map" style="height: 250px; margin: 10px 0;"></div>
         </section>
 
-        <!-- Location 2 (required: more than 1 location) -->
+        <!-- Location 2 - Satellite studio in Melville (required: more than 1 location) -->
         <section class="location">
             <h3>Location 2: Satellite Studio - Melville</h3>
             <p>45 7th Street<br>Melville, Johannesburg<br>2092</p>
             <p><strong>Hours:</strong> Wednesday - Sunday, 11am - 5pm (By appointment)</p>
-            <p><em>[Interactive Google Map to be added in Part 3]</em></p>
+            <!-- Leaflet Map for Location 2 -->
+            <div id="map2" class="leaflet-map" style="height: 250px; margin: 10px 0;"></div>
         </section>
 
-        <!-- Contact Form -->
+        <!-- Contact form for general enquiries -->
+        <!-- Form validation will be handled by JavaScript in Part 3 -->
         <section class="contact-form">
             <h3>Send Us a Message</h3>
             <form id="contactForm" action="#" method="post">
                 <label for="contactName">Name:</label>
-                <input type="text" id="contactName" name="contactName" required>
+                <input type="text" id="contactName" name="contactName" required minlength="2" placeholder="Enter your name">
 
                 <label for="contactEmail">Email:</label>
-                <input type="email" id="contactEmail" name="contactEmail" required>
+                <input type="email" id="contactEmail" name="contactEmail" required placeholder="Enter your email address">
 
                 <label for="subject">Subject:</label>
                 <select id="subject" name="subject">
+                    <option value="">Select a subject...</option>
                     <option value="general">General Enquiry</option>
                     <option value="booking">Booking Question</option>
                     <option value="custom">Custom Design Request</option>
                 </select>
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Type your message here..."></textarea>
+
+                <div id="contact-error" class="error-message"></div>
+                <div id="contact-success" class="success-message"></div>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -76,6 +88,8 @@
         <p>Follow us: Instagram | Facebook</p>
     </footer>
 
+    <!-- Leaflet JavaScript for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

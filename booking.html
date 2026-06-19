@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beru Art Tattoo Studio | Booking</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Beru Art Tattoo Studio | Booking - Tattoo Consultation</title>
+    <meta name="description" content="Book a tattoo consultation at Beru Art Tattoo Studio in Johannesburg. Fill out our booking form to discuss your custom tattoo design.">
+    <meta name="keywords" content="book tattoo consultation, tattoo appointment, custom tattoo booking, Beru Art booking">
+    <meta name="robots" content="index, follow">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ========================================== -->
-    <!-- BERU ART TATTOO STUDIO - BOOKING PAGE      -->
-    <!-- ========================================== -->
-
+    <!-- Booking page - consultation request form -->
     <header>
         <div class="logo">
             <img src="images/Beru Art logo.png" alt="Beru Art Tattoo Studio Logo" width="120">
@@ -30,18 +33,21 @@
         <h2>Book a Consultation</h2>
         <p>Fill out the form below to book your tattoo consultation</p>
 
+        <!-- Booking form - collects client information and tattoo preferences -->
+        <!-- Form validation will be handled by JavaScript in Part 3 -->
         <form id="bookingForm" action="#" method="post">
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required minlength="2" placeholder="Enter your full name">
 
             <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
 
             <label for="tattoo-style">Preferred Tattoo Style:</label>
             <select id="tattoo-style" name="tattoo-style">
+                <option value="">Select a style...</option>
                 <option value="realism">Realism</option>
                 <option value="blackwork">Blackwork</option>
                 <option value="traditional">Traditional</option>
@@ -54,6 +60,9 @@
 
             <label for="date">Preferred Date:</label>
             <input type="date" id="date" name="date">
+
+            <div id="form-error" class="error-message"></div>
+            <div id="form-success" class="success-message"></div>
 
             <button type="submit">Submit Booking Request</button>
         </form>
