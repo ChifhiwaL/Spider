@@ -1,0 +1,11 @@
+# robots.txt for Beru Art Tattoo Studio
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://chifhiwal.github.io/Spider/sitemap.xml
